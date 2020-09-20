@@ -7,10 +7,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/books">Stock <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/livres">Stock <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
+{{--       <li class="nav-item">
         <a class="nav-link" href="/scanner">Scanner</a>
-      </li>
+      </li> --}}
   </div>
 </nav>

@@ -1,0 +1,40 @@
+@startuml
+
+class Livre {
+    id : int
+    isbn : string
+    titre : string
+    niveau : string
+    editeur : string
+    annee : int
+    stock : int
+}
+
+class Client {
+    id : int
+    nom : string
+    prenom : string
+    date_naissance : date
+    adresse : string
+    mail : string
+    telephone : string
+}
+
+class Fournisseur {
+    id : int
+    raison_sociale : string
+    adresse : string
+    mail : string
+    telephone : string
+}
+
+class Commande {
+    date : date
+}
+
+Livre "*" -- "*" Commande
+Client "1" -- "*" Commande
+Fournisseur "1" -- "*" Commande
+
+
+@enduml

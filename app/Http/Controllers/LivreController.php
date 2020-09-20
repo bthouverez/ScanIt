@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Book;
+use App\Models\Livre;
 use Illuminate\Http\Request;
 
-class BookController extends Controller
+class LivreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class BookController extends Controller
     public function index()
     {
         
-        $books = Book::all();
-        return view('books.index', compact('books'));
+        $livres = Livre::all();
+        return view('livres.index', compact('livres'));
     }
 
     /**
@@ -26,7 +26,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('books.create');
+        return view('livres.create');
     }
 
     /**
@@ -37,64 +37,69 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        Book::create([
+        Livre::create([
             'isbn' => $request->isbn,
             'titre' => $request->titre,
             'editeur' => $request->editeur,
             'annee' => $request->annee
         ]);
-        return redirect('/books');
+        if(isset($request->fromScan)) {
+            $info_message = 'Livre stocké, stock actuel : 1';
+            $operation = 'inc';
+            return view('scanner.index', compact('operation'), compact('info_message'));
+        }
+        return redirect('/livres');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Book  $book
+     * @param  \App\Models\Livre  $livre
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
+    public function show(Livre $livre)
     {
-        return view('books.show', compact('book'));
+        return view('livres.show', compact('livre'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Book  $book
+     * @param  \App\Models\Livre  $Livre
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book $book)
+    public function edit(Livre $livre)
     {
-        return view('books.edit', compact('book'));
+        return view('livres.edit', compact('livre'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Book  $book
+     * @param  \App\Models\Livre  $Livre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request, Livre $livre)
     {
-        $book->update([
+        $livre->update([
             'isbn' => $request->isbn,
             'titre' => $request->titre,
             'editeur' => $request->editeur,
             'annee' => $request->annee
         ]);
-        return redirect('/books/'.$book->id);
+        return redirect('/livres/'.$livre->id);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Book  $book
+     * @param  \App\Models\Livre  $Livre
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book $book)
+    public function destroy(Livre $livre)
     {
-        $book->delete();
-        return redirect('/books');
+        $livre->delete();
+        return redirect('/livres');
     }
 }

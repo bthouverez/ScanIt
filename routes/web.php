@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BookController;
+use App\Http\Controllers\LivreController;
 use App\Http\Controllers\ScannerController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,11 +16,13 @@ use App\Http\Controllers\ScannerController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
+Route::get('/', [DashboardController::class, 'index']);
+
+Route::get('/apropos', function() {
+	return view('about');
 });
 
-Route::resource('books', BookController::class);
+Route::resource('livres', LivreController::class);
 
 Route::get('scanner', [ScannerController::class, 'index']);
 Route::post('scanner', [ScannerController::class, 'manageScan']);
