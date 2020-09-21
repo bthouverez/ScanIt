@@ -19,8 +19,8 @@
 			<tr>
 				<td>{{ $commande->id }}</td>
 				<td>{{ $commande->date }}</td>		
-				<td>{{ $commande->id_fournisseur }}</td>		
-				<td>{{ $commande->id_client }}</td>		
+				<td>{{ $commande->fournisseur_id }}</td>		
+				<td>{{ $commande->client_id }}</td>		
 				<td>
 					<a href="/commandes/{{ $commande->id }}/edit" class="btn btn-warning">Editer</a>
 				</td>

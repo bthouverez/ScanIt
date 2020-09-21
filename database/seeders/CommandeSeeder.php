@@ -27,5 +27,8 @@ class CommandeSeeder extends Seeder
 		\DB::table('lot_commandes')->insert([
 		    ['commande_id' => 1, 'livre_id' => 1, 'quantite' => 2],
 		]);
+		\DB::table('lot_commandes')->insert([
+		    ['commande_id' => 1, 'livre_id' => 3, 'quantite' => 5],
+		]);
     }
 }
