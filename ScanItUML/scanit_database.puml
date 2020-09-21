@@ -29,6 +29,7 @@ class Fournisseur {
 }
 
 class Commande {
+    id : int
     date : date
 }
 

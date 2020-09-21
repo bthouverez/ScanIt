@@ -10,7 +10,7 @@
 		<li>{{ $livre->annee }}</li>
 	</ul>
 	
-	<a href="/livres/{{ $livre->id }}/edit" class="btn btn-warning">Editer</a>
+	<a href="/books/{{ $livre->id }}/edit" class="btn btn-warning">Editer</a>
 	
 			
 </div>

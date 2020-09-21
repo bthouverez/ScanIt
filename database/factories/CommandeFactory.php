@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\Book;
+use App\Models\Commande;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class BookFactory extends Factory
+class CommandeFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Book::class;
+    protected $model = Commande::class;
 
     /**
      * Define the model's default state.

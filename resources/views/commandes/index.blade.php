@@ -10,12 +10,11 @@
 			<th>ID</th>
 			<th>ISBN</th>
 			<th>Titre</th>
-			<th>Niveau</th>
 			<th>Editeur</th>
 			<th>Année</th>
 			<th>Stock</th>
-        	<th></th>
-        	<th></th>
+			<th>Editer</th>
+			<th>Voir</th>
 		</tr>
 
 		@foreach($livres as $livre)
@@ -23,7 +22,6 @@
 				<td>{{ $livre->id }}</td>
 				<td>{{ $livre->isbn }}</td>		
 				<td>{{ $livre->titre }}</td>		
-				<td>{{ $livre->niveau }}</td>		
 				<td>{{ $livre->editeur }}</td>		
 				<td>{{ $livre->annee }}</td>			
 				<td>{{ $livre->stock }}</td>		

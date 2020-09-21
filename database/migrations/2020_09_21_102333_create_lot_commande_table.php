@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLivresTable extends Migration
+class CreateLotCommandeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,8 @@ class CreateLivresTable extends Migration
      */
     public function up()
     {
-        Schema::create('livres', function (Blueprint $table) {
+        Schema::create('lot_commande', function (Blueprint $table) {
             $table->id();
-            $table->string('isbn')->unique(); # 13 chars, begins with 978
-            $table->string('titre');
-            $table->string('niveau');
-            $table->string('editeur');
-            $table->integer('annee');
-            $table->integer('stock')->default(1);
             $table->timestamps();
         });
     }
@@ -32,6 +26,6 @@ class CreateLivresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('livres');
+        Schema::dropIfExists('lot_commande');
     }
 }
