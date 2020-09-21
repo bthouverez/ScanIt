@@ -6,19 +6,19 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item {{ Route::current()->uri == "/" ? 'active' : '' }}">
         <a class="nav-link" href="/">Accueil</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item {{ Route::current()->uri == "livres" ? 'active' : '' }}">
         <a class="nav-link" href="/livres">Livres</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item {{ Route::current()->uri == "clients" ? 'active' : '' }}">
         <a class="nav-link" href="/clients">Clients</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item {{ Route::current()->uri == "fournisseurs" ? 'active' : '' }}">
         <a class="nav-link" href="/fournisseurs">Fournisseurs</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item {{ Route::current()->uri == "commandes" ? 'active' : '' }}">
         <a class="nav-link" href="/commandes">Commandes</a>
       </li>
 {{--       <li class="nav-item">

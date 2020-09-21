@@ -2,34 +2,30 @@
 
 @section('content')
 <div class="container">
-	<h1>Les livres</h1>
-	<a href="/livres/create" class="btn btn-primary">Ajouter une référence</a>
+	<h1>Les commandes</h1>
+	<a href="/commandes/create" class="btn btn-primary">Ajouter une référence</a>
 
 	<table class="table">
 		<tr>
 			<th>ID</th>
-			<th>ISBN</th>
-			<th>Titre</th>
-			<th>Editeur</th>
-			<th>Année</th>
-			<th>Stock</th>
-			<th>Editer</th>
-			<th>Voir</th>
+			<th>Date</th>
+			<th>Fournisseur</th>
+			<th>Client</th>
+			<th></th>
+			<th></th>
 		</tr>
 
-		@foreach($livres as $livre)
+		@foreach($commandes as $commande)
 			<tr>
-				<td>{{ $livre->id }}</td>
-				<td>{{ $livre->isbn }}</td>		
-				<td>{{ $livre->titre }}</td>		
-				<td>{{ $livre->editeur }}</td>		
-				<td>{{ $livre->annee }}</td>			
-				<td>{{ $livre->stock }}</td>		
+				<td>{{ $commande->id }}</td>
+				<td>{{ $commande->date }}</td>		
+				<td>{{ $commande->id_fournisseur }}</td>		
+				<td>{{ $commande->id_client }}</td>		
 				<td>
-					<a href="/livres/{{ $livre->id }}/edit" class="btn btn-warning">Editer</a>
+					<a href="/commandes/{{ $commande->id }}/edit" class="btn btn-warning">Editer</a>
 				</td>
 				<td>
-					<a href="/livres/{{ $livre->id }}" class="btn btn-primary">Voir</a>
+					<a href="/commandes/{{ $commande->id }}" class="btn btn-primary">Voir</a>
 				</td>
 			</tr>
 

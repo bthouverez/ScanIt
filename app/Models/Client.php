@@ -9,4 +9,9 @@ class Client extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function commandes()
+    {
+    	return $this->hasMany(Commande::class);
+    }
 }

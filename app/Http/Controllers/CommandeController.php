@@ -15,6 +15,8 @@ class CommandeController extends Controller
     public function index()
     {
         //
+        $commandes = Commande::all();
+        return view('commandes.index', compact('commandes'));
     }
 
     /**
@@ -25,6 +27,7 @@ class CommandeController extends Controller
     public function create()
     {
         //
+        return view('commandes.create');
     }
 
     /**
@@ -36,6 +39,13 @@ class CommandeController extends Controller
     public function store(Request $request)
     {
         //
+        Commande::create([
+            'raison_sociale' => $request->raison_sociale,
+            'adresse' => $request->adresse,
+            'mail' => $request->mail,
+            'telephone' => $request->telephone
+        ]);
+        return redirect('/commandes');
     }
 
     /**
@@ -47,6 +57,7 @@ class CommandeController extends Controller
     public function show(Commande $commande)
     {
         //
+        return view('commandes.show', compact('commande'));
     }
 
     /**
@@ -58,6 +69,7 @@ class CommandeController extends Controller
     public function edit(Commande $commande)
     {
         //
+        return view('commandes.edit', compact('commande'));
     }
 
     /**
@@ -70,6 +82,13 @@ class CommandeController extends Controller
     public function update(Request $request, Commande $commande)
     {
         //
+        $commande->update([
+            'raison_sociale' => $request->raison_sociale,
+            'adresse' => $request->adresse,
+            'mail' => $request->mail,
+            'telephone' => $request->telephone
+        ]);
+        return redirect('/commandes/'.$commande->id);
     }
 
     /**
@@ -81,5 +100,9 @@ class CommandeController extends Controller
     public function destroy(Commande $commande)
     {
         //
+        $commande->delete();
+        return redirect('/commandes');
     }
 }
+    
+
