@@ -22,6 +22,8 @@ class Commande extends Model
 
     public function livres()
     {
+    	//dd($this->hasManyThrough(Livre::class, LotCommande::class, 'commande_id', 'id', 'id', 'livre_id'));
+    	return $this->belongsToMany(Livre::class, LotCommande::class)->withPivot('quantite');
     	return $this->hasManyThrough(Livre::class, LotCommande::class, 'commande_id', 'id', 'id', 'livre_id');
     }
 }

@@ -8,12 +8,24 @@
 		<h1>ScanIt - gestion de stock et de commandes de livres</h1>
 		<table class="table table-sm table-striped">
 			<tr>
-				<td>Références enregistrées</td>
+				<td>Nombre de références enregistrées</td>
 				<td>{{ $livres->count() }}</td>
 			</tr>
 			<tr>
-				<td>Stock total</td>
+				<td>Stock total de livres</td>
 				<td>{{ $livres->map->stock->sum() }}</td>
+			</tr>
+			<tr>
+				<td>Nombre de commandes passées</td>
+				<td>{{ $commandes->count() }}</td>
+			</tr>
+			<tr>
+				<td>Nombre de clients enregistrés</td>
+				<td>{{ $clients->count() }}</td>
+			</tr>
+			<tr>
+				<td>Nombre de fournisseurs enregistrés</td>
+				<td>{{ $fournisseurs->count() }}</td>
 			</tr>
 		</table>
 	</section>
